@@ -3,13 +3,13 @@ import { Button } from '@mui/material';
 
 const PillShapedbtn = ({ bgColor, text }) => {
     const buttonStyle = {
-        borderRadius: '20px',
+        borderRadius: '30px',
         backgroundColor: bgColor,
         color: 'white',
         whiteSpace: 'nowrap',
-        fontWeight: 500,
+        fontWeight: '500',
         fontSize: '16px',
-        width: '280px'
+        width: '280px',
     };
 
     return (

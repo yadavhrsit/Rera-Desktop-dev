@@ -3,6 +3,8 @@ import { Grid, Box, TextField } from '@mui/material';
 import MainButton from './MainButton';
 import PillShapedbtn from './PillShapedBtn';
 import PillShapedSelect from './PillShapedSelect';
+import SmallHeading from './SmallHeading';
+import Activities from './Activities';
 
 function Dashboard() {
     const [selectedOption, setSelectedOption] = useState('');
@@ -83,17 +85,15 @@ function Dashboard() {
                             background: 'whitesmoke',
                             borderLeft: '1px solid #c9d6df'
                         }}>
-
+                            <Box sx={{ height: '40%' }}>
+                                <SmallHeading text={"Activities"} />
+                                <Activities />
+                            </Box>
                         </Box>
                     </Box>
-
-
                 </Box>
-                {/*  */}
             </Grid>
-            {/* <Grid item xs={2.2} style={{ height: '100vh', backgroundColor: 'whitesmoke', borderLeft: '1px solid #c9d6df' }}>
 
-            </Grid> */}
 
         </Grid>
     );
