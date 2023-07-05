@@ -23,23 +23,16 @@ function Dashboard() {
             <Grid item xs={1.8} style={{ height: '100vh', backgroundColor: 'whitesmoke', borderRight: '1px solid #c9d6df', padding: '10px 16px', display: 'flex', flexDirection: 'column', gap: '15px' }}>
 
                 <div style={{ display: 'flex', backgroundColor: 'grey', padding: '15px 10px', borderRadius: '8px', color: 'white', width: '100%', boxSizing: 'border-box' }}>
-                    <Box
-                        sx={{
-                            width: '35%',
-                            display: 'flex',
-                            justifyContent: 'center',
+                    <img
+                        src={'https://placehold.it/200'}
+                        alt="My Logo"
+                        style={{
+                            width: '45%',
+                            borderRadius: '50%',
                         }}
-                    >
-                        <img
-                            src={'https://placehold.it/200'}
-                            alt="My Logo"
-                            style={{
-                                width: '100%',
-                                borderRadius: '50%',
-                            }}
-                        />
-                    </Box>
-                    <p style={{ marginLeft: 'auto' }}>XYZ Company</p>
+                    />
+
+                    <p style={{ textAlign: 'center' }}>XYZ Company</p>
                 </div>
                 <MainButton text={'Dashboard'} />
                 <MainButton text={'Projects'} />
