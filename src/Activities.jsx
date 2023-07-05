@@ -4,17 +4,12 @@ import Activity from './Activity';
 
 function Activities() {
     return (
-        <Box
-            sx={{
-                overflowY: 'auto',
-                width: '98%',
-                height: '100%',
-                padding: '6px 1px 2px 8px',
-                boxSizing: 'border-box',
-                wordWrap: 'break-word',
-                hyphens: 'auto',
-            }}
-        >
+        <Box sx={{
+            overflowY: 'scroll',
+            boxSizing: 'border-box',
+            height: '100%',
+            flex: 1,
+        }}>
             <Activity
                 text={"Just a random activity or a Notification"}
             />

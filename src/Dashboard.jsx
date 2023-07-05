@@ -22,9 +22,24 @@ function Dashboard() {
         <Grid container>
             <Grid item xs={1.8} style={{ height: '100vh', backgroundColor: 'whitesmoke', borderRight: '1px solid #c9d6df', padding: '10px 16px', display: 'flex', flexDirection: 'column', gap: '15px' }}>
 
-                <div style={{ display: 'flex', backgroundColor: 'grey', padding: '15px 10px', borderRadius: '8px', color: 'white', gap: '5px' }}>
-                    <div style={{ width: '80px', height: '80px', borderRadius: '50%', backgroundColor: 'white' }}></div>
-                    <p style={{ width: '50%', marginLeft: '15px' }}>Company Name</p>
+                <div style={{ display: 'flex', backgroundColor: 'grey', padding: '15px 10px', borderRadius: '8px', color: 'white', width: '100%', boxSizing: 'border-box' }}>
+                    <Box
+                        sx={{
+                            width: '35%',
+                            display: 'flex',
+                            justifyContent: 'center',
+                        }}
+                    >
+                        <img
+                            src={'https://placehold.it/200'}
+                            alt="My Logo"
+                            style={{
+                                width: '100%',
+                                borderRadius: '50%',
+                            }}
+                        />
+                    </Box>
+                    <p style={{ marginLeft: 'auto' }}>XYZ Company</p>
                 </div>
                 <MainButton text={'Dashboard'} />
                 <MainButton text={'Projects'} />
@@ -85,17 +100,18 @@ function Dashboard() {
                             background: 'whitesmoke',
                             borderLeft: '1px solid #c9d6df'
                         }}>
-                            <Box sx={{ height: '40%' }}>
+                            <Box sx={{ height: '50%', borderBottom: '1px solid #c9d6df', display: 'flex', flexDirection: 'column' }}>
                                 <SmallHeading text={"Activities"} />
                                 <Activities />
                             </Box>
+                            <SmallHeading text={"Report by Location"} />
                         </Box>
                     </Box>
                 </Box>
             </Grid>
 
 
-        </Grid>
+        </Grid >
     );
 }
 
