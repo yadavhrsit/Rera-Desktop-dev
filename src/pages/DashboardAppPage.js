@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { faker } from '@faker-js/faker';
 // @mui
 import { useTheme } from '@mui/material/styles';
-import { Grid, Container, Typography } from '@mui/material';
+import { Grid, Container, Typography, Button } from '@mui/material';
 // components
 // sections
 import {
@@ -11,7 +11,7 @@ import {
 
   AppWidgetSummary,
 } from '../sections/@dashboard/app';
-
+import Iconify from '../components/iconify';
 // ----------------------------------------------------------------------
 
 export default function DashboardAppPage() {
@@ -24,9 +24,23 @@ export default function DashboardAppPage() {
       </Helmet>
 
       <Container maxWidth="xl">
-        <Typography variant="h4" sx={{ mb: 5 }}>
-          Hi, Welcome back
-        </Typography>
+        <Grid container>
+          <Grid item xs={12} sm={6} md={8}>
+            <Typography variant="h4" sx={{ mb: 5 }}>
+              Hi, Welcome back
+            </Typography>
+          </Grid>
+          <Grid item xs={12} sm={6} md={2}>
+            <Button variant="contained" startIcon={<Iconify icon="eva:plus-fill" />}>
+              Create Project
+            </Button>
+          </Grid>
+          <Grid item xs={12} sm={6} md={2}>
+            <Button variant="contained" startIcon={<Iconify icon="eva:arrow-ios-downward-fill" />}>
+              Maharashtra
+            </Button>
+          </Grid>
+        </Grid>
 
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6} md={2.4}>
