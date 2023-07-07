@@ -13,7 +13,7 @@ const navConfig = [
   },
   {
     title: 'Projects',
-    path: '/dashboard/app',
+    path: '/dashboard/products',
     icon: icon('ic_projects'),
   },
   {
