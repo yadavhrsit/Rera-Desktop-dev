@@ -36,9 +36,12 @@ import USERLIST from '../_mock/user';
 const TABLE_HEAD = [
   { id: 'name', label: 'Name', alignRight: false },
   { id: 'company', label: 'Company', alignRight: false },
-  { id: 'role', label: 'Role', alignRight: false },
-  { id: 'isVerified', label: 'Verified', alignRight: false },
-  { id: 'status', label: 'Status', alignRight: false },
+  { id: 'owner', label: 'Owner', alignRight: false },
+  { id: 'arc', label: 'Architect', alignRight: false },
+  { id: 'consultant', label: 'Consultant', alignRight: false },
+  { id: 'ca', label: 'CA', alignRight: false },
+  { id: 'report', label: 'Reports', alignRight: false },
+  { id: 'share', label: 'Share', alignRight: false },
   { id: '' },
 ];
 
@@ -75,17 +78,13 @@ function applySortFilter(array, comparator, query) {
 
 export default function ProjectsPage() {
   const [open, setOpen] = useState(null);
+  const [openShare, setOpenShare] = useState(null); // Added state for the share menu
 
   const [page, setPage] = useState(0);
-
   const [order, setOrder] = useState('asc');
-
   const [selected, setSelected] = useState([]);
-
   const [orderBy, setOrderBy] = useState('name');
-
   const [filterName, setFilterName] = useState('');
-
   const [rowsPerPage, setRowsPerPage] = useState(5);
 
   const handleOpenMenu = (event) => {
@@ -94,6 +93,14 @@ export default function ProjectsPage() {
 
   const handleCloseMenu = () => {
     setOpen(null);
+  };
+
+  const handleShareOpenMenu = (event) => {
+    setOpenShare(event.currentTarget); // Updated the state for the share menu
+  };
+
+  const handleShareCloseMenu = () => {
+    setOpenShare(null); // Updated the state for the share menu
   };
 
   const handleRequestSort = (event, property) => {
@@ -109,21 +116,6 @@ export default function ProjectsPage() {
       return;
     }
     setSelected([]);
-  };
-
-  const handleClick = (event, name) => {
-    const selectedIndex = selected.indexOf(name);
-    let newSelected = [];
-    if (selectedIndex === -1) {
-      newSelected = newSelected.concat(selected, name);
-    } else if (selectedIndex === 0) {
-      newSelected = newSelected.concat(selected.slice(1));
-    } else if (selectedIndex === selected.length - 1) {
-      newSelected = newSelected.concat(selected.slice(0, -1));
-    } else if (selectedIndex > 0) {
-      newSelected = newSelected.concat(selected.slice(0, selectedIndex), selected.slice(selectedIndex + 1));
-    }
-    setSelected(newSelected);
   };
 
   const handleChangePage = (event, newPage) => {
@@ -149,16 +141,16 @@ export default function ProjectsPage() {
   return (
     <>
       <Helmet>
-        <title> Projects </title>
+        <title>Projects</title>
       </Helmet>
 
       <Container>
         <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
           <Typography variant="h4" gutterBottom>
-            User
+            Projects
           </Typography>
           <Button variant="contained" startIcon={<Iconify icon="eva:plus-fill" />}>
-            New User
+            New Project
           </Button>
         </Stack>
 
@@ -179,36 +171,39 @@ export default function ProjectsPage() {
                 />
                 <TableBody>
                   {filteredUsers.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
-                    const { id, name, role, status, company, avatarUrl, isVerified } = row;
+                    const { id, name, company, owner, ca, architect, consultant } = row;
                     const selectedUser = selected.indexOf(name) !== -1;
 
                     return (
                       <TableRow hover key={id} tabIndex={-1} role="checkbox" selected={selectedUser}>
                         <TableCell padding="checkbox">
-                          <Checkbox checked={selectedUser} onChange={(event) => handleClick(event, name)} />
+                          <></>
                         </TableCell>
 
                         <TableCell component="th" scope="row" padding="none">
-                          <Stack direction="row" alignItems="center" spacing={2}>
-                            <Avatar alt={name} src={avatarUrl} />
-                            <Typography variant="subtitle2" noWrap>
-                              {name}
-                            </Typography>
-                          </Stack>
+                          <Typography variant="subtitle2" noWrap>
+                            {name}
+                          </Typography>
                         </TableCell>
 
                         <TableCell align="left">{company}</TableCell>
 
-                        <TableCell align="left">{role}</TableCell>
+                        <TableCell align="left">{owner}</TableCell>
 
-                        <TableCell align="left">{isVerified ? 'Yes' : 'No'}</TableCell>
+                        <TableCell align="left">{architect}</TableCell>
 
-                        <TableCell align="left">
-                          <Label color={(status === 'banned' && 'error') || 'success'}>{sentenceCase(status)}</Label>
-                        </TableCell>
+                        <TableCell align="left">{consultant}</TableCell>
+
+                        <TableCell align="left">{ca}</TableCell>
 
                         <TableCell align="right">
                           <IconButton size="large" color="inherit" onClick={handleOpenMenu}>
+                            <Iconify icon={'eva:more-vertical-fill'} />
+                          </IconButton>
+                        </TableCell>
+
+                        <TableCell align="right">
+                          <IconButton size="large" color="inherit" onClick={handleShareOpenMenu}>
                             <Iconify icon={'eva:more-vertical-fill'} />
                           </IconButton>
                         </TableCell>
@@ -280,13 +275,53 @@ export default function ProjectsPage() {
         }}
       >
         <MenuItem>
-          <Iconify icon={'eva:edit-fill'} sx={{ mr: 2 }} />
-          Edit
+          <Iconify icon={'eva:eye-fill'} sx={{ mr: 2 }} />
+          Architect
         </MenuItem>
 
-        <MenuItem sx={{ color: 'error.main' }}>
-          <Iconify icon={'eva:trash-2-outline'} sx={{ mr: 2 }} />
-          Delete
+        <MenuItem>
+          <Iconify icon={'eva:eye-fill'} sx={{ mr: 2 }} />
+          CA
+        </MenuItem>
+
+        <MenuItem>
+          <Iconify icon={'eva:eye-fill'} sx={{ mr: 2 }} />
+          Consultant
+        </MenuItem>
+      </Popover>
+
+      <Popover
+        open={Boolean(openShare)}
+        anchorEl={openShare}
+        onClose={handleShareCloseMenu}
+        anchorOrigin={{ vertical: 'top', horizontal: 'left' }}
+        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+        PaperProps={{
+          sx: {
+            p: 1,
+            width: 140,
+            ml: '180px',
+            '& .MuiMenuItem-root': {
+              px: 1,
+              typography: 'body2',
+              borderRadius: 0.75,
+            },
+          },
+        }}
+      >
+        <MenuItem>
+          <Iconify icon={'eva:phone-fill'} sx={{ mr: 2 }} />
+          Whatsapp
+        </MenuItem>
+
+        <MenuItem>
+          <Iconify icon={'eva:email-fill'} sx={{ mr: 2 }} />
+          Email
+        </MenuItem>
+
+        <MenuItem>
+          <Iconify icon={'eva:download-fill'} sx={{ mr: 2 }} />
+          Download
         </MenuItem>
       </Popover>
     </>
