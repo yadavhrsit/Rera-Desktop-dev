@@ -17,7 +17,7 @@ AppNewsUpdate.propTypes = {
 
 export default function AppNewsUpdate({ title, subheader, list, ...other }) {
   return (
-    <Card {...other}>
+    <Card {...other} sx={{ minHeight: '200px' }}>
       <CardHeader title={title} subheader={subheader} />
 
       <Scrollbar>
