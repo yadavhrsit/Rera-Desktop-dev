@@ -34,14 +34,14 @@ import USERLIST from '../_mock/user';
 // ----------------------------------------------------------------------
 
 const TABLE_HEAD = [
-  { id: 'name', label: 'Name', alignRight: false },
-  { id: 'company', label: 'Company', alignRight: false },
-  { id: 'owner', label: 'Owner', alignRight: false },
-  { id: 'arc', label: 'Architect', alignRight: false },
-  { id: 'consultant', label: 'Consultant', alignRight: false },
-  { id: 'ca', label: 'CA', alignRight: false },
-  { id: 'create', label: 'Create', alignRight: false },
-  { id: 'download', label: 'Download', alignRight: false },
+  { id: 'name', label: 'Name', alignCenter: true },
+  { id: 'company', label: 'Company', alignCenter: true },
+  { id: 'owner', label: 'Owner', alignCenter: true },
+  { id: 'arc', label: 'Architect', alignCenter: true },
+  { id: 'consultant', label: 'Consultant', alignCenter: true },
+  { id: 'ca', label: 'CA', alignCenter: true },
+  { id: 'create', label: 'Create', alignCenter: true },
+  { id: 'download', label: 'Download', alignCenter: true },
   { id: '' },
 ];
 
@@ -186,44 +186,51 @@ export default function ProjectsPage() {
                           </Typography>
                         </TableCell>
 
-                        <TableCell align="left">{company} </TableCell>
+                        <TableCell align="center">{company} </TableCell>
 
-                        <TableCell align="left">{owner}
+                        <TableCell align="center">{owner}
+                          <br />
+                          <Button sx={{ fontSize: '12px', bgcolor: '#539165', color: 'white', minWidth: '100px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:whats-app-outlined" />}>
+                            Whatsapp
+                          </Button>
+                          <Button sx={{ fontSize: '12px', bgcolor: '#E64848', color: 'white', minWidth: '113px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:mail-outlined" />}>
+                            Email
+                          </Button>
                         </TableCell>
 
                         <TableCell align="left">{architect}
                           <br />
-                          <Button sx={{ fontSize: '12px', bgcolor: '#539165', color: 'white', minWidth: '120px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:whats-app-outlined" />}>
+                          <Button sx={{ fontSize: '12px', bgcolor: '#539165', color: 'white', minWidth: '100px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:whats-app-outlined" />}>
                             Whatsapp
                           </Button>
-                          <Button sx={{ fontSize: '12px', bgcolor: '#E64848', color: 'white', minWidth: '120px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:mail-outlined" />}>
+                          <Button sx={{ fontSize: '12px', bgcolor: '#E64848', color: 'white', minWidth: '113px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:mail-outlined" />}>
                             Email
                           </Button>
                         </TableCell>
 
                         <TableCell align="left">{consultant}
                           <br />
-                          <Button sx={{ fontSize: '12px', bgcolor: '#539165', color: 'white', minWidth: '120px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:whats-app-outlined" />}>
+                          <Button sx={{ fontSize: '12px', bgcolor: '#539165', color: 'white', minWidth: '100px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:whats-app-outlined" />}>
                             Whatsapp
                           </Button>
-                          <Button sx={{ fontSize: '12px', bgcolor: '#E64848', color: 'white', minWidth: '120px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:mail-outlined" />}>
+                          <Button sx={{ fontSize: '12px', bgcolor: '#E64848', color: 'white', minWidth: '113px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:mail-outlined" />}>
                             Email
                           </Button>
                         </TableCell>
 
                         <TableCell align="left">{ca}
                           <br />
-                          <Button sx={{ fontSize: '12px', bgcolor: '#539165', color: 'white', minWidth: '120px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:whats-app-outlined" />}>
+                          <Button sx={{ fontSize: '12px', bgcolor: '#539165', color: 'white', minWidth: '100px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:whats-app-outlined" />}>
                             Whatsapp
                           </Button>
-                          <Button sx={{ fontSize: '12px', bgcolor: '#E64848', color: 'white', minWidth: '120px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:mail-outlined" />}>
+                          <Button sx={{ fontSize: '12px', bgcolor: '#E64848', color: 'white', minWidth: '113px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:mail-outlined" />}>
                             Email
                           </Button>
                         </TableCell>
 
                         <TableCell align="right">
-                          <Button sx={{ fontSize: '12px', bgcolor: '#539165', color: 'white', minWidth: '120px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="mdi:file-edit" />}>
-                            Create Report
+                          <Button sx={{ fontSize: '14px', bgcolor: '#539165', color: 'white', }} variant="contained" startIcon={<Iconify icon="mdi:file-edit" />}>
+                            Create/ Edit Report
                           </Button>
                         </TableCell>
 
