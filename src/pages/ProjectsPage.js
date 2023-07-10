@@ -41,7 +41,7 @@ const TABLE_HEAD = [
   { id: 'consultant', label: 'Consultant', alignRight: false },
   { id: 'ca', label: 'CA', alignRight: false },
   { id: 'report', label: 'Reports', alignRight: false },
-  { id: 'share', label: 'Share', alignRight: false },
+  { id: 'download', label: 'Download', alignRight: false },
   { id: '' },
 ];
 
@@ -186,15 +186,40 @@ export default function ProjectsPage() {
                           </Typography>
                         </TableCell>
 
-                        <TableCell align="left">{company}</TableCell>
+                        <TableCell align="left">{company} </TableCell>
 
-                        <TableCell align="left">{owner}</TableCell>
+                        <TableCell align="left">{owner}
+                        </TableCell>
 
-                        <TableCell align="left">{architect}</TableCell>
+                        <TableCell align="left">{architect}
+                          <br />
+                          <Button sx={{ fontSize: '12px', bgcolor: '#539165', color: 'white', minWidth: '120px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:whats-app-outlined" />}>
+                            Whatsapp
+                          </Button>
+                          <Button sx={{ fontSize: '12px', bgcolor: '#E64848', color: 'white', minWidth: '120px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:mail-outlined" />}>
+                            Email
+                          </Button>
+                        </TableCell>
 
-                        <TableCell align="left">{consultant}</TableCell>
+                        <TableCell align="left">{consultant}
+                          <br />
+                          <Button sx={{ fontSize: '12px', bgcolor: '#539165', color: 'white', minWidth: '120px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:whats-app-outlined" />}>
+                            Whatsapp
+                          </Button>
+                          <Button sx={{ fontSize: '12px', bgcolor: '#E64848', color: 'white', minWidth: '120px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:mail-outlined" />}>
+                            Email
+                          </Button>
+                        </TableCell>
 
-                        <TableCell align="left">{ca}</TableCell>
+                        <TableCell align="left">{ca}
+                          <br />
+                          <Button sx={{ fontSize: '12px', bgcolor: '#539165', color: 'white', minWidth: '120px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:whats-app-outlined" />}>
+                            Whatsapp
+                          </Button>
+                          <Button sx={{ fontSize: '12px', bgcolor: '#E64848', color: 'white', minWidth: '120px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:mail-outlined" />}>
+                            Email
+                          </Button>
+                        </TableCell>
 
                         <TableCell align="right">
                           <IconButton size="large" color="inherit" onClick={handleOpenMenu}>
@@ -203,9 +228,9 @@ export default function ProjectsPage() {
                         </TableCell>
 
                         <TableCell align="right">
-                          <IconButton size="large" color="inherit" onClick={handleShareOpenMenu}>
-                            <Iconify icon={'eva:more-vertical-fill'} />
-                          </IconButton>
+                          <Button disabled>
+                            <Iconify icon={'eva:download-fill'} sx={{ mr: 2 }} />
+                          </Button>
                         </TableCell>
                       </TableRow>
                     );
@@ -255,75 +280,6 @@ export default function ProjectsPage() {
           />
         </Card>
       </Container>
-
-      <Popover
-        open={Boolean(open)}
-        anchorEl={open}
-        onClose={handleCloseMenu}
-        anchorOrigin={{ vertical: 'top', horizontal: 'left' }}
-        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-        PaperProps={{
-          sx: {
-            p: 1,
-            width: 140,
-            '& .MuiMenuItem-root': {
-              px: 1,
-              typography: 'body2',
-              borderRadius: 0.75,
-            },
-          },
-        }}
-      >
-        <MenuItem>
-          <Iconify icon={'eva:eye-fill'} sx={{ mr: 2 }} />
-          Architect
-        </MenuItem>
-
-        <MenuItem>
-          <Iconify icon={'eva:eye-fill'} sx={{ mr: 2 }} />
-          CA
-        </MenuItem>
-
-        <MenuItem>
-          <Iconify icon={'eva:eye-fill'} sx={{ mr: 2 }} />
-          Consultant
-        </MenuItem>
-      </Popover>
-
-      <Popover
-        open={Boolean(openShare)}
-        anchorEl={openShare}
-        onClose={handleShareCloseMenu}
-        anchorOrigin={{ vertical: 'top', horizontal: 'left' }}
-        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-        PaperProps={{
-          sx: {
-            p: 1,
-            width: 140,
-            ml: '180px',
-            '& .MuiMenuItem-root': {
-              px: 1,
-              typography: 'body2',
-              borderRadius: 0.75,
-            },
-          },
-        }}
-      >
-        <MenuItem>
-          <Iconify icon={'eva:phone-fill'} sx={{ mr: 2 }} />
-          Whatsapp
-        </MenuItem>
-
-        <MenuItem>
-          <Iconify icon={'eva:email-fill'} sx={{ mr: 2 }} />
-          Email
-        </MenuItem>
-
-        <MenuItem>
-          <Iconify icon={'eva:download-fill'} sx={{ mr: 2 }} />
-          Download
-        </MenuItem>
-      </Popover>
     </>
   );
 }
