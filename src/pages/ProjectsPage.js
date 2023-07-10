@@ -21,6 +21,7 @@ import {
   IconButton,
   TableContainer,
   TablePagination,
+  Box
 } from '@mui/material';
 // components
 import Label from '../components/label';
@@ -175,7 +176,7 @@ export default function ProjectsPage() {
                     const selectedUser = selected.indexOf(name) !== -1;
 
                     return (
-                      <TableRow hover key={id} tabIndex={-1} role="checkbox" selected={selectedUser} >
+                      <TableRow hover key={id} tabIndex={-1} role="checkbox" selected={selectedUser} sx={{}}>
                         <TableCell padding="checkbox">
                           <></>
                         </TableCell>
@@ -210,12 +211,14 @@ export default function ProjectsPage() {
 
                         <TableCell align="left">{consultant}
                           <br />
-                          <Button sx={{ fontSize: '12px', bgcolor: '#539165', color: 'white', minWidth: '100px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:whats-app-outlined" />}>
-                            Whatsapp
-                          </Button>
-                          <Button sx={{ fontSize: '12px', bgcolor: '#E64848', color: 'white', minWidth: '113px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:mail-outlined" />}>
-                            Email
-                          </Button>
+                          <Box >
+                            <Button sx={{ fontSize: '12px', bgcolor: '#539165', color: 'white', minWidth: '100px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:whats-app-outlined" />}>
+                              Whatsapp
+                            </Button>
+                            <Button sx={{ fontSize: '12px', bgcolor: '#E64848', color: 'white', minWidth: '113px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:mail-outlined" />}>
+                              Email
+                            </Button>
+                          </Box>
                         </TableCell>
 
                         <TableCell align="left">{ca}

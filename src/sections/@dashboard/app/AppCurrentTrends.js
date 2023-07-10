@@ -1,11 +1,11 @@
 // @mui
 import PropTypes from 'prop-types';
-import { Box, Stack, Link, Card, Typography, CardHeader, Button, Grid } from '@mui/material';
+import { Box, Stack, Link, Card, Typography, CardHeader } from '@mui/material';
 // utils
 import { fToNow } from '../../../utils/formatTime';
 // components
 import Scrollbar from '../../../components/scrollbar';
-import Iconify from '../../../components/iconify';
+
 // ----------------------------------------------------------------------
 
 AppCurrentTrends.propTypes = {
@@ -17,14 +17,7 @@ AppCurrentTrends.propTypes = {
 export default function AppCurrentTrends({ title, subheader, list, ...other }) {
     return (
         <Card {...other}>
-            <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                <CardHeader title={title} subheader={subheader} />
-                <Button variant="contained" startIcon={<Iconify icon="eva:arrow-ios-downward-fill" />} sx={{ mr: '10px', mt: '15px' }}>
-                    Maharashtra
-                </Button>
-            </Box>
-
-
+            <CardHeader title={title} subheader={subheader} />
             <Scrollbar>
                 <Stack spacing={1} sx={{ p: 3, pr: 0 }}>
                     {list.map((news) => (

@@ -25,10 +25,16 @@ export default function DashboardAppPage() {
 
       <Container maxWidth="xl">
         <Grid container spacing={3}>
-          <Grid item xs={12} sm={6} md={8}>
+          <Grid item xs={12} sm={6} md={10.3}>
             <Typography variant="h4" sx={{ mb: 5 }}>
               Hi, Welcome back
             </Typography>
+          </Grid>
+
+          <Grid item xs={12} sm={6} md={1.7} sx={{ mb: '20px' }}>
+            <Button variant="contained" startIcon={<Iconify icon="eva:arrow-ios-downward-fill" />} sx={{ float: 'right' }}>
+              Maharashtra
+            </Button>
           </Grid>
         </Grid>
 
