@@ -30,16 +30,6 @@ export default function DashboardAppPage() {
               Hi, Welcome back
             </Typography>
           </Grid>
-          <Grid item xs={12} sm={6} md={2}>
-            <Button variant="contained" startIcon={<Iconify icon="eva:plus-fill" />}>
-              Create Project
-            </Button>
-          </Grid>
-          <Grid item xs={12} sm={6} md={2} sx={{ mb: '12px' }}>
-            <Button variant="contained" startIcon={<Iconify icon="eva:arrow-ios-downward-fill" />}>
-              Maharashtra
-            </Button>
-          </Grid>
         </Grid>
 
         <Grid container spacing={1}>
