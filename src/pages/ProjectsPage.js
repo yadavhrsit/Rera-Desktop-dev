@@ -40,7 +40,7 @@ const TABLE_HEAD = [
   { id: 'arc', label: 'Architect', alignRight: false },
   { id: 'consultant', label: 'Consultant', alignRight: false },
   { id: 'ca', label: 'CA', alignRight: false },
-  { id: 'report', label: 'Reports', alignRight: false },
+  { id: 'create', label: 'Create', alignRight: false },
   { id: 'download', label: 'Download', alignRight: false },
   { id: '' },
 ];
@@ -222,9 +222,9 @@ export default function ProjectsPage() {
                         </TableCell>
 
                         <TableCell align="right">
-                          <IconButton size="large" color="inherit" onClick={handleOpenMenu}>
-                            <Iconify icon={'eva:more-vertical-fill'} />
-                          </IconButton>
+                          <Button sx={{ fontSize: '12px', bgcolor: '#539165', color: 'white', minWidth: '120px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="mdi:file-edit" />}>
+                            Create Report
+                          </Button>
                         </TableCell>
 
                         <TableCell align="right">
