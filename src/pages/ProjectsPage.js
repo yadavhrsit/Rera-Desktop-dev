@@ -175,7 +175,7 @@ export default function ProjectsPage() {
                     const selectedUser = selected.indexOf(name) !== -1;
 
                     return (
-                      <TableRow hover key={id} tabIndex={-1} role="checkbox" selected={selectedUser}>
+                      <TableRow hover key={id} tabIndex={-1} role="checkbox" selected={selectedUser} >
                         <TableCell padding="checkbox">
                           <></>
                         </TableCell>
@@ -229,8 +229,8 @@ export default function ProjectsPage() {
                         </TableCell>
 
                         <TableCell align="right">
-                          <Button sx={{ fontSize: '14px', bgcolor: '#539165', color: 'white', }} variant="contained" startIcon={<Iconify icon="mdi:file-edit" />}>
-                            Create/ Edit Report
+                          <Button sx={{ fontSize: '12px', bgcolor: '#539165', color: 'white', minWidth: '113px' }} variant="contained" startIcon={<Iconify icon="mdi:file-edit" />}>
+                            Report
                           </Button>
                         </TableCell>
 
