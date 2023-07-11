@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { faker } from '@faker-js/faker';
 // @mui
 import { useTheme } from '@mui/material/styles';
-import { Grid, Container, Typography, Button, Divider } from '@mui/material';
+import { Grid, Container, Typography, Button, } from '@mui/material';
 // components
 // sections
 import {
