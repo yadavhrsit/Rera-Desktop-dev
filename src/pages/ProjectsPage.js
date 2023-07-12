@@ -156,11 +156,11 @@ export default function ProjectsPage() {
 
                     return (
                       <TableRow hover key={id} tabIndex={-1} role="checkbox" selected={selectedUser} sx={{}}>
-                        <TableCell padding="checkbox">
+                        <TableCell sx={{ width: '2px', margin: '0', padding: '0' }}>
                           <></>
                         </TableCell>
 
-                        <TableCell component="th" scope="row" padding="none">
+                        <TableCell component="th" scope="row" padding="none" align="center">
                           <Typography variant="subtitle2" noWrap>
                             {name}
                           </Typography>
@@ -235,7 +235,9 @@ export default function ProjectsPage() {
                             <Iconify icon={'eva:download-fill'} sx={{ mr: 2 }} />
                           </Button>
                         </TableCell>
-
+                        <TableCell sx={{ width: '2px', margin: '0', padding: '0' }}>
+                          <></>
+                        </TableCell>
                       </TableRow>
                     );
                   })}
