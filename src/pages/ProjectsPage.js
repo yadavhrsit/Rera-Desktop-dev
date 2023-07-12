@@ -1,6 +1,5 @@
 import { Helmet } from 'react-helmet-async';
 import { filter } from 'lodash';
-import { sentenceCase } from 'change-case';
 import { useState } from 'react';
 // @mui
 import {
@@ -8,23 +7,17 @@ import {
   Table,
   Stack,
   Paper,
-  Avatar,
   Button,
-  Popover,
-  Checkbox,
   TableRow,
-  MenuItem,
   TableBody,
   TableCell,
   Container,
   Typography,
-  IconButton,
   TableContainer,
   TablePagination,
   Box
 } from '@mui/material';
 // components
-import Label from '../components/label';
 import Iconify from '../components/iconify';
 import Scrollbar from '../components/scrollbar';
 // sections
@@ -41,7 +34,8 @@ const TABLE_HEAD = [
   { id: 'arc', label: 'Architect', alignCenter: true },
   { id: 'consultant', label: 'Consultant', alignCenter: true },
   { id: 'ca', label: 'CA', alignCenter: true },
-  { id: 'create', label: 'Create', alignCenter: true },
+  { id: 'report', label: 'Report', alignCenter: true },
+  { id: 'staff', label: 'Assigned Staff', alignCenter: true },
   { id: 'download', label: 'Download', alignCenter: true },
   { id: '' },
 ];
@@ -88,21 +82,7 @@ export default function ProjectsPage() {
   const [filterName, setFilterName] = useState('');
   const [rowsPerPage, setRowsPerPage] = useState(5);
 
-  const handleOpenMenu = (event) => {
-    setOpen(event.currentTarget);
-  };
 
-  const handleCloseMenu = () => {
-    setOpen(null);
-  };
-
-  const handleShareOpenMenu = (event) => {
-    setOpenShare(event.currentTarget); // Updated the state for the share menu
-  };
-
-  const handleShareCloseMenu = () => {
-    setOpenShare(null); // Updated the state for the share menu
-  };
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
@@ -145,7 +125,7 @@ export default function ProjectsPage() {
         <title>Projects</title>
       </Helmet>
 
-      <Container>
+      <Container maxWidth='xl'>
         <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
           <Typography variant="h4" gutterBottom>
             Projects
@@ -157,7 +137,6 @@ export default function ProjectsPage() {
 
         <Card>
           <UserListToolbar numSelected={selected.length} filterName={filterName} onFilterName={handleFilterByName} />
-
           <Scrollbar>
             <TableContainer sx={{ minWidth: 800 }}>
               <Table>
@@ -172,7 +151,7 @@ export default function ProjectsPage() {
                 />
                 <TableBody>
                   {filteredUsers.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
-                    const { id, name, company, owner, ca, architect, consultant } = row;
+                    const { id, name, company, owner, ca, architect, consultant, staff } = row;
                     const selectedUser = selected.indexOf(name) !== -1;
 
                     return (
@@ -199,7 +178,7 @@ export default function ProjectsPage() {
                           </Button>
                         </TableCell>
 
-                        <TableCell align="left">{architect}
+                        <TableCell align="center">{architect}
                           <br />
                           <Button sx={{ fontSize: '12px', bgcolor: '#25D366', color: 'white', minWidth: '100px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:whats-app-outlined" />}>
                             Whatsapp
@@ -209,7 +188,7 @@ export default function ProjectsPage() {
                           </Button>
                         </TableCell>
 
-                        <TableCell align="left">{consultant}
+                        <TableCell align="center">{consultant}
                           <br />
                           <Box >
                             <Button sx={{ fontSize: '12px', bgcolor: '#25D366', color: 'white', minWidth: '100px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:whats-app-outlined" />}>
@@ -221,7 +200,7 @@ export default function ProjectsPage() {
                           </Box>
                         </TableCell>
 
-                        <TableCell align="left">{ca}
+                        <TableCell align="center">{ca}
                           <br />
                           <Button sx={{ fontSize: '12px', bgcolor: '#25D366', color: 'white', minWidth: '100px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:whats-app-outlined" />}>
                             Whatsapp
@@ -231,17 +210,32 @@ export default function ProjectsPage() {
                           </Button>
                         </TableCell>
 
-                        <TableCell align="right">
-                          <Button sx={{ fontSize: '12px', bgcolor: '#539165', color: 'white', minWidth: '113px' }} variant="contained" startIcon={<Iconify icon="mdi:file-edit" />}>
-                            Report
+                        <TableCell align="center">
+                          <br />
+                          <Button sx={{ fontSize: '12px', color: 'white', minWidth: '113px' }} variant="contained" startIcon={<Iconify icon="mdi:file-edit" />}>
+                            Edit Your
+                          </Button>
+                          <Button sx={{ fontSize: '12px', color: 'white', minWidth: '113px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="mdi:eye-outline" />}>
+                            View All
                           </Button>
                         </TableCell>
 
-                        <TableCell align="right">
+                        <TableCell align="center">
+                          {staff}
+                          <Button sx={{ fontSize: '12px', color: 'white', minWidth: '113px', mt: '6px', bgcolor: '#E64848' }} variant="contained" startIcon={<Iconify icon="mdi:account-remove" />}>
+                            Remove
+                          </Button>
+                          <Button sx={{ fontSize: '12px', color: 'white', minWidth: '113px', mt: '6px', bgcolor: '#128C7E' }} variant="contained" startIcon={<Iconify icon="mdi:account-plus" />}>
+                            Add
+                          </Button>
+                        </TableCell>
+
+                        <TableCell align="center">
                           <Button disabled>
                             <Iconify icon={'eva:download-fill'} sx={{ mr: 2 }} />
                           </Button>
                         </TableCell>
+
                       </TableRow>
                     );
                   })}

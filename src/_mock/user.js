@@ -7,10 +7,11 @@ const users = [...Array(24)].map((_, index) => ({
   id: faker.datatype.uuid(),
   name: faker.name.fullName(),
   company: faker.company.name(),
+  owner: faker.name.fullName(),
   ca: faker.name.fullName(),
   architect: faker.name.fullName(),
   consultant: faker.name.fullName(),
-  owner: faker.name.fullName(),
+  staff: faker.name.fullName(),
 }));
 
 export default users;
