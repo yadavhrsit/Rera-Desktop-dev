@@ -151,7 +151,7 @@ export default function ProjectsPage() {
                 />
                 <TableBody>
                   {filteredUsers.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
-                    const { id, name, company, owner, ca, architect, consultant, staff } = row;
+                    const { id, name, company, owner, ca, architect, consultant, staff, empty } = row;
                     const selectedUser = selected.indexOf(name) !== -1;
 
                     return (
@@ -211,17 +211,18 @@ export default function ProjectsPage() {
                         </TableCell>
 
                         <TableCell align="center">
+                          {empty}
                           <br />
-                          <Button sx={{ fontSize: '12px', color: 'white', minWidth: '113px' }} variant="contained" startIcon={<Iconify icon="mdi:file-edit" />}>
+                          <Button sx={{ fontSize: '12px', color: 'white', minWidth: '113px', mt: '2.5px' }} variant="contained" startIcon={<Iconify icon="mdi:file-edit" />}>
                             Edit Your
                           </Button>
-                          <Button sx={{ fontSize: '12px', color: 'white', minWidth: '113px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="mdi:eye-outline" />}>
+                          <Button sx={{ fontSize: '12px', color: 'white', minWidth: '113px', mt: '6px', }} variant="contained" startIcon={<Iconify icon="mdi:eye-outline" />}>
                             View All
                           </Button>
                         </TableCell>
 
-                        <TableCell align="center">
-                          {staff}
+                        <TableCell align="center">{staff}
+                          <br />
                           <Button sx={{ fontSize: '12px', color: 'white', minWidth: '113px', mt: '6px', bgcolor: '#E64848' }} variant="contained" startIcon={<Iconify icon="mdi:account-remove" />}>
                             Remove
                           </Button>
@@ -285,7 +286,7 @@ export default function ProjectsPage() {
             onRowsPerPageChange={handleChangeRowsPerPage}
           />
         </Card>
-      </Container>
+      </Container >
     </>
   );
 }

@@ -12,6 +12,7 @@ const users = [...Array(24)].map((_, index) => ({
   architect: faker.name.fullName(),
   consultant: faker.name.fullName(),
   staff: faker.name.fullName(),
+  empty: ''
 }));
 
 export default users;
