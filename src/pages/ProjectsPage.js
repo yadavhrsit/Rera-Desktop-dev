@@ -125,7 +125,7 @@ export default function ProjectsPage() {
         <title>Projects</title>
       </Helmet>
 
-      <Container maxWidth='xl'>
+      <Container maxWidth='xl' disableGutters>
         <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
           <Typography variant="h4" gutterBottom>
             Projects
