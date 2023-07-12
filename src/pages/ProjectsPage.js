@@ -155,18 +155,18 @@ export default function ProjectsPage() {
                     const selectedUser = selected.indexOf(name) !== -1;
 
                     return (
-                      <TableRow hover key={id} tabIndex={-1} role="checkbox" selected={selectedUser} sx={{}}>
+                      <TableRow hover key={id} tabIndex={-1} role="checkbox" selected={selectedUser} sx={{ verticalAlign: 'bottom' }}>
                         <TableCell sx={{ width: '2px', margin: '0', padding: '0' }}>
                           <></>
                         </TableCell>
 
-                        <TableCell component="th" scope="row" padding="none" align="center">
+                        <TableCell component="th" scope="row" padding="none" align="center" sx={{ verticalAlign: 'middle' }}>
                           <Typography variant="subtitle2" noWrap>
                             {name}
                           </Typography>
                         </TableCell>
 
-                        <TableCell align="center">{company} </TableCell>
+                        <TableCell align="center" sx={{ verticalAlign: 'middle' }}>{company} </TableCell>
 
                         <TableCell align="center">{owner}
                           <br />
@@ -213,7 +213,7 @@ export default function ProjectsPage() {
                         <TableCell align="center">
                           {empty}
                           <br />
-                          <Button sx={{ fontSize: '12px', color: 'white', minWidth: '113px', mt: '2.5px' }} variant="contained" startIcon={<Iconify icon="mdi:file-edit" />}>
+                          <Button sx={{ fontSize: '12px', color: 'white', minWidth: '113px', }} variant="contained" startIcon={<Iconify icon="mdi:file-edit" />}>
                             Edit Your
                           </Button>
                           <Button sx={{ fontSize: '12px', color: 'white', minWidth: '113px', mt: '6px', }} variant="contained" startIcon={<Iconify icon="mdi:eye-outline" />}>
@@ -231,9 +231,9 @@ export default function ProjectsPage() {
                           </Button>
                         </TableCell>
 
-                        <TableCell align="center">
+                        <TableCell align="center" sx={{ verticalAlign: 'middle' }}>
                           <Button disabled>
-                            <Iconify icon={'eva:download-fill'} sx={{ mr: 2 }} />
+                            <Iconify icon={'eva:download-fill'} width={'30px'} />
                           </Button>
                         </TableCell>
                         <TableCell sx={{ width: '2px', margin: '0', padding: '0' }}>
