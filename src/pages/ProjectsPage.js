@@ -174,7 +174,10 @@ export default function ProjectsPage() {
                         <TableCell align="center" sx={{ verticalAlign: 'middle' }}>{company} </TableCell>
 
                         <TableCell align="center">{owner}
-                          <Accordion sx={{ width: 'min-content', padding: '0' }}>
+                          <Button sx={{ fontSize: '12px', color: 'white', minWidth: '113px', mt: '10px' }} variant="contained" startIcon={<Iconify icon="mdi:eye-outline" />}>
+                            View Report
+                          </Button>
+                          <Accordion sx={{ width: 'fit-content', padding: '0', mt: '10px' }}>
                             <AccordionSummary sx={{
                               padding: '0px 18px',
 
@@ -197,10 +200,13 @@ export default function ProjectsPage() {
                         </TableCell>
 
                         <TableCell align="center">{architect}
-                          <Accordion sx={{ width: 'min-content', padding: '0' }}>
+                          <Button sx={{ fontSize: '12px', color: 'white', minWidth: '113px', mt: '10px' }} variant="contained" startIcon={<Iconify icon="mdi:eye-outline" />}>
+                            View Report
+                          </Button>
+                          <Accordion sx={{ width: 'fit-content', padding: '0' }}>
                             <AccordionSummary sx={{
                               padding: '0px 18px',
-
+                              mt: '10px'
                             }}
                               expandIcon={<ExpandMoreIcon />}
                               aria-controls="panel1a-content"
@@ -218,16 +224,16 @@ export default function ProjectsPage() {
                             </AccordionDetails>
                           </Accordion>
 
-                          <Button sx={{ fontSize: '12px', color: 'white', minWidth: '113px', mt: '6px', mb: '6px' }} variant="contained" startIcon={<Iconify icon="mdi:eye-outline" />}>
-                            View Report
-                          </Button>
                         </TableCell>
 
                         <TableCell align="center">{consultant}
-                          <Accordion sx={{ width: 'min-content', padding: '0' }}>
+                          <Button sx={{ fontSize: '12px', color: 'white', minWidth: '113px', mt: '10px' }} variant="contained" startIcon={<Iconify icon="mdi:eye-outline" />}>
+                            View Report
+                          </Button>
+                          <Accordion sx={{ width: 'fit-content', padding: '0' }}>
                             <AccordionSummary sx={{
                               padding: '0px 18px',
-
+                              mt: '10px'
                             }}
                               expandIcon={<ExpandMoreIcon />}
                               aria-controls="panel1a-content"
@@ -244,16 +250,16 @@ export default function ProjectsPage() {
                               </Button>
                             </AccordionDetails>
                           </Accordion>
-
-                          <Button sx={{ fontSize: '12px', color: 'white', minWidth: '113px', mt: '6px', mb: '6px' }} variant="contained" startIcon={<Iconify icon="mdi:eye-outline" />}>
-                            View Report
-                          </Button>
                         </TableCell>
 
                         <TableCell align="center">{ca}
-                          <Accordion sx={{ width: 'min-content', padding: '0' }}>
+                          <Button sx={{ fontSize: '12px', color: 'white', minWidth: '113px', mt: '10px' }} variant="contained" startIcon={<Iconify icon="mdi:eye-outline" />}>
+                            View Report
+                          </Button>
+                          <Accordion sx={{ width: 'fit-content', padding: '0', }}>
                             <AccordionSummary sx={{
                               padding: '0px 18px',
+                              mt: '10px'
                             }}
                               expandIcon={<ExpandMoreIcon />}
                               aria-controls="panel1a-content"
@@ -270,10 +276,6 @@ export default function ProjectsPage() {
                               </Button>
                             </AccordionDetails>
                           </Accordion>
-
-                          <Button sx={{ fontSize: '12px', color: 'white', minWidth: '113px', mt: '6px', mb: '6px' }} variant="contained" startIcon={<Iconify icon="mdi:eye-outline" />}>
-                            View Report
-                          </Button>
 
                         </TableCell>
 
