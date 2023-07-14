@@ -17,6 +17,11 @@ const navConfig = [
     icon: icon('ic_projects'),
   },
   {
+    title: 'Staff Management',
+    path: '/dashboard/staff',
+    icon: icon('ic_staffs'),
+  },
+  {
     title: 'Account Management',
     path: '/dashboard/user',
     icon: icon('ic_user'),

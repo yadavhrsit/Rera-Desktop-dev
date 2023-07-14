@@ -10,6 +10,7 @@ import Page404 from './pages/Page404';
 import DashboardAppPage from './pages/DashboardAppPage';
 import ProjectsPage from './pages/ProjectsPage';
 import AccountPage from './pages/AccountPage';
+import StaffManagementPage from './pages/StaffManagementPage';
 // ----------------------------------------------------------------------
 
 export default function Router() {
@@ -22,6 +23,7 @@ export default function Router() {
         { path: 'app', element: <DashboardAppPage /> },
         { path: 'projects', element: <ProjectsPage /> },
         { path: 'user', element: <AccountPage /> },
+        { path: 'staff', element: <StaffManagementPage /> },
       ],
     },
     {
