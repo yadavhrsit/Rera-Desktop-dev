@@ -3,6 +3,9 @@ import { filter } from 'lodash';
 import { useState } from 'react';
 // @mui
 import {
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
   Card,
   Table,
   Stack,
@@ -17,6 +20,8 @@ import {
   TablePagination,
   Box
 } from '@mui/material';
+// icons
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 // components
 import Iconify from '../components/iconify';
 import Scrollbar from '../components/scrollbar';
@@ -155,7 +160,7 @@ export default function ProjectsPage() {
                     const selectedUser = selected.indexOf(name) !== -1;
 
                     return (
-                      <TableRow hover key={id} tabIndex={-1} role="checkbox" selected={selectedUser} sx={{ verticalAlign: 'bottom' }}>
+                      <TableRow hover key={id} tabIndex={-1} role="checkbox" selected={selectedUser} sx={{ verticalAlign: 'middle' }}>
                         <TableCell sx={{ width: '2px', margin: '0', padding: '0' }}>
                           <></>
                         </TableCell>
@@ -169,49 +174,112 @@ export default function ProjectsPage() {
                         <TableCell align="center" sx={{ verticalAlign: 'middle' }}>{company} </TableCell>
 
                         <TableCell align="center">{owner}
-                          <br />
-                          <Button sx={{ fontSize: '12px', bgcolor: '#25D366', color: 'white', minWidth: '100px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:whats-app-outlined" />}>
-                            Whatsapp
-                          </Button>
-                          <Button sx={{ fontSize: '12px', bgcolor: '#E64848', color: 'white', minWidth: '113px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:mail-outlined" />}>
-                            Email
-                          </Button>
+                          <Accordion sx={{ width: 'min-content', padding: '0' }}>
+                            <AccordionSummary sx={{
+                              padding: '0px 18px',
+
+                            }}
+                              expandIcon={<ExpandMoreIcon />}
+                              aria-controls="panel1a-content"
+                              id="panel1a-header"
+                            >
+                              Share Report
+                            </AccordionSummary>
+                            <AccordionDetails>
+                              <Button sx={{ fontSize: '12px', bgcolor: '#25D366', color: 'white', minWidth: '100px', width: '100%', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:whats-app-outlined" />}>
+                                Whatsapp
+                              </Button>
+                              <Button sx={{ fontSize: '12px', bgcolor: '#E64848', color: 'white', minWidth: '113px', width: '100%', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:mail-outlined" />}>
+                                Email
+                              </Button>
+                            </AccordionDetails>
+                          </Accordion>
                         </TableCell>
 
                         <TableCell align="center">{architect}
-                          <br />
-                          <Button sx={{ fontSize: '12px', bgcolor: '#25D366', color: 'white', minWidth: '100px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:whats-app-outlined" />}>
-                            Whatsapp
-                          </Button>
-                          <Button sx={{ fontSize: '12px', bgcolor: '#E64848', color: 'white', minWidth: '113px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:mail-outlined" />}>
-                            Email
+                          <Accordion sx={{ width: 'min-content', padding: '0' }}>
+                            <AccordionSummary sx={{
+                              padding: '0px 18px',
+
+                            }}
+                              expandIcon={<ExpandMoreIcon />}
+                              aria-controls="panel1a-content"
+                              id="panel1a-header"
+                            >
+                              Share Report
+                            </AccordionSummary>
+                            <AccordionDetails>
+                              <Button sx={{ fontSize: '12px', bgcolor: '#25D366', color: 'white', minWidth: '100px', width: '100%', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:whats-app-outlined" />}>
+                                Whatsapp
+                              </Button>
+                              <Button sx={{ fontSize: '12px', bgcolor: '#E64848', color: 'white', minWidth: '113px', width: '100%', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:mail-outlined" />}>
+                                Email
+                              </Button>
+                            </AccordionDetails>
+                          </Accordion>
+
+                          <Button sx={{ fontSize: '12px', color: 'white', minWidth: '113px', mt: '6px', mb: '6px' }} variant="contained" startIcon={<Iconify icon="mdi:eye-outline" />}>
+                            View Report
                           </Button>
                         </TableCell>
 
                         <TableCell align="center">{consultant}
-                          <br />
-                          <Box >
-                            <Button sx={{ fontSize: '12px', bgcolor: '#25D366', color: 'white', minWidth: '100px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:whats-app-outlined" />}>
-                              Whatsapp
-                            </Button>
-                            <Button sx={{ fontSize: '12px', bgcolor: '#E64848', color: 'white', minWidth: '113px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:mail-outlined" />}>
-                              Email
-                            </Button>
-                          </Box>
+                          <Accordion sx={{ width: 'min-content', padding: '0' }}>
+                            <AccordionSummary sx={{
+                              padding: '0px 18px',
+
+                            }}
+                              expandIcon={<ExpandMoreIcon />}
+                              aria-controls="panel1a-content"
+                              id="panel1a-header"
+                            >
+                              Share Report
+                            </AccordionSummary>
+                            <AccordionDetails>
+                              <Button sx={{ fontSize: '12px', bgcolor: '#25D366', color: 'white', minWidth: '100px', width: '100%', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:whats-app-outlined" />}>
+                                Whatsapp
+                              </Button>
+                              <Button sx={{ fontSize: '12px', bgcolor: '#E64848', color: 'white', minWidth: '113px', width: '100%', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:mail-outlined" />}>
+                                Email
+                              </Button>
+                            </AccordionDetails>
+                          </Accordion>
+
+                          <Button sx={{ fontSize: '12px', color: 'white', minWidth: '113px', mt: '6px', mb: '6px' }} variant="contained" startIcon={<Iconify icon="mdi:eye-outline" />}>
+                            View Report
+                          </Button>
                         </TableCell>
 
                         <TableCell align="center">{ca}
-                          <br />
-                          <Button sx={{ fontSize: '12px', bgcolor: '#25D366', color: 'white', minWidth: '100px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:whats-app-outlined" />}>
-                            Whatsapp
+                          <Accordion sx={{ width: 'min-content', padding: '0' }}>
+                            <AccordionSummary sx={{
+                              padding: '0px 18px',
+                            }}
+                              expandIcon={<ExpandMoreIcon />}
+                              aria-controls="panel1a-content"
+                              id="panel1a-header"
+                            >
+                              Share Report
+                            </AccordionSummary>
+                            <AccordionDetails>
+                              <Button sx={{ fontSize: '12px', bgcolor: '#25D366', color: 'white', minWidth: '100px', width: '100%', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:whats-app-outlined" />}>
+                                Whatsapp
+                              </Button>
+                              <Button sx={{ fontSize: '12px', bgcolor: '#E64848', color: 'white', minWidth: '113px', width: '100%', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:mail-outlined" />}>
+                                Email
+                              </Button>
+                            </AccordionDetails>
+                          </Accordion>
+
+                          <Button sx={{ fontSize: '12px', color: 'white', minWidth: '113px', mt: '6px', mb: '6px' }} variant="contained" startIcon={<Iconify icon="mdi:eye-outline" />}>
+                            View Report
                           </Button>
-                          <Button sx={{ fontSize: '12px', bgcolor: '#E64848', color: 'white', minWidth: '113px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="ant-design:mail-outlined" />}>
-                            Email
-                          </Button>
+
                         </TableCell>
 
                         <TableCell align="center">
                           {empty}
+
                           <br />
                           <Button sx={{ fontSize: '12px', color: 'white', minWidth: '113px', }} variant="contained" startIcon={<Iconify icon="mdi:file-edit" />}>
                             Edit Your
@@ -222,11 +290,10 @@ export default function ProjectsPage() {
                         </TableCell>
 
                         <TableCell align="center">{staff}
-                          <br />
                           <Button sx={{ fontSize: '12px', color: 'white', minWidth: '113px', mt: '6px', bgcolor: '#E64848' }} variant="contained" startIcon={<Iconify icon="mdi:account-remove" />}>
                             Remove
                           </Button>
-                          <Button sx={{ fontSize: '12px', color: 'white', minWidth: '113px', mt: '6px', bgcolor: '#128C7E' }} variant="contained" startIcon={<Iconify icon="mdi:account-plus" />}>
+                          <Button sx={{ fontSize: '12px', color: 'white', minWidth: '113px', mt: '6px' }} variant="contained" startIcon={<Iconify icon="mdi:account-plus" />}>
                             Add
                           </Button>
                         </TableCell>
