@@ -165,7 +165,7 @@ export default function ProjectsPage() {
                           <></>
                         </TableCell>
 
-                        <TableCell component="th" scope="row" padding="none" align="center" sx={{ verticalAlign: 'middle' }}>
+                        <TableCell component="th" scope="row" padding="0px 0px 0px 4px" align="center" sx={{ verticalAlign: 'middle' }}>
                           <Typography variant="subtitle2" noWrap>
                             {name}
                           </Typography>
