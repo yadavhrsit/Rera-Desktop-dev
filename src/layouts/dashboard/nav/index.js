@@ -53,7 +53,7 @@ export default function Nav({ openNav, onCloseNav }) {
         '& .simplebar-content': { height: 1, display: 'flex', flexDirection: 'column' },
       }}
     >
-      <Box sx={{ px: 2.5, py: 3, display: 'inline-flex' }}>
+      <Box sx={{ px: 2.5, py: 3, display: 'inline-flex', mx: 'auto' }}>
         <Logo />
       </Box>
 
@@ -96,7 +96,7 @@ export default function Nav({ openNav, onCloseNav }) {
             </Typography>
           </Box>
 
-          <Button href="https://material-ui.com/store/items/minimal-dashboard/" target="_blank" variant="contained">
+          <Button href="#" target="_blank" variant="contained">
             Resubscribe Now
           </Button>
         </Stack>
