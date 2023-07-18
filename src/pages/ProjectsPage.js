@@ -2,6 +2,10 @@ import { Helmet } from 'react-helmet-async';
 import { useState } from 'react';
 // @mui
 import {
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  Box,
   Card,
   Table,
   Stack,
@@ -248,24 +252,116 @@ export default function ProjectsPage() {
                           <Button sx={{ fontSize: '12px', color: 'white', minWidth: '113px', mt: '10px' }} variant="contained" startIcon={<Iconify icon="mdi:eye-outline" />}>
                             View Report
                           </Button>
+                          <Box sx={{ maxWidth: '150px', mt: '6px', marginInline: 'auto' }}>
+                            <Accordion >
+                              <AccordionSummary expandIcon={<Iconify icon="mdi:chevron-down" />}>
+                                Share
+                              </AccordionSummary>
+                              <AccordionDetails>
+                                <Button
+                                  sx={{ fontSize: '12px', color: 'white', minWidth: '113px', bgcolor: '#25D366' }}
+                                  variant="contained"
+                                  startIcon={<Iconify icon="mdi:whatsapp" />}
+                                >
+                                  Whatsapp
+                                </Button>
+                                <Button
+                                  sx={{ fontSize: '12px', color: 'white', minWidth: '113px', mt: '10px', bgcolor: '#E64848' }}
+                                  variant="contained"
+                                  startIcon={<Iconify icon="mdi:email" />}
+                                >
+                                  Email
+                                </Button>
+                              </AccordionDetails>
+                            </Accordion>
+                          </Box>
                         </TableCell>
 
                         <TableCell align="center">{architect}
                           <Button sx={{ fontSize: '12px', color: 'white', minWidth: '113px', mt: '10px' }} variant="contained" startIcon={<Iconify icon="mdi:eye-outline" />}>
                             View Report
                           </Button>
+                          <Box sx={{ maxWidth: '150px', mt: '6px', marginInline: 'auto' }}>
+                            <Accordion >
+                              <AccordionSummary expandIcon={<Iconify icon="mdi:chevron-down" />}>
+                                Share
+                              </AccordionSummary>
+                              <AccordionDetails>
+                                <Button
+                                  sx={{ fontSize: '12px', color: 'white', minWidth: '113px', bgcolor: '#25D366' }}
+                                  variant="contained"
+                                  startIcon={<Iconify icon="mdi:whatsapp" />}
+                                >
+                                  Whatsapp
+                                </Button>
+                                <Button
+                                  sx={{ fontSize: '12px', color: 'white', minWidth: '113px', mt: '10px', bgcolor: '#E64848' }}
+                                  variant="contained"
+                                  startIcon={<Iconify icon="mdi:email" />}
+                                >
+                                  Email
+                                </Button>
+                              </AccordionDetails>
+                            </Accordion>
+                          </Box>
                         </TableCell>
 
                         <TableCell align="center">{consultant}
                           <Button sx={{ fontSize: '12px', color: 'white', minWidth: '113px', mt: '10px' }} variant="contained" startIcon={<Iconify icon="mdi:eye-outline" />}>
                             View Report
                           </Button>
+                          <Box sx={{ maxWidth: '150px', mt: '6px', marginInline: 'auto' }}>
+                            <Accordion >
+                              <AccordionSummary expandIcon={<Iconify icon="mdi:chevron-down" />}>
+                                Share
+                              </AccordionSummary>
+                              <AccordionDetails>
+                                <Button
+                                  sx={{ fontSize: '12px', color: 'white', minWidth: '113px', bgcolor: '#25D366' }}
+                                  variant="contained"
+                                  startIcon={<Iconify icon="mdi:whatsapp" />}
+                                >
+                                  Whatsapp
+                                </Button>
+                                <Button
+                                  sx={{ fontSize: '12px', color: 'white', minWidth: '113px', mt: '10px', bgcolor: '#E64848' }}
+                                  variant="contained"
+                                  startIcon={<Iconify icon="mdi:email" />}
+                                >
+                                  Email
+                                </Button>
+                              </AccordionDetails>
+                            </Accordion>
+                          </Box>
                         </TableCell>
 
                         <TableCell align="center">{ca}
                           <Button sx={{ fontSize: '12px', color: 'white', minWidth: '113px', mt: '10px' }} variant="contained" startIcon={<Iconify icon="mdi:eye-outline" />}>
                             View Report
                           </Button>
+                          <Box sx={{ maxWidth: '150px', mt: '6px', marginInline: 'auto' }}>
+                            <Accordion >
+                              <AccordionSummary expandIcon={<Iconify icon="mdi:chevron-down" />}>
+                                Share
+                              </AccordionSummary>
+                              <AccordionDetails>
+                                <Button
+                                  sx={{ fontSize: '12px', color: 'white', minWidth: '113px', bgcolor: '#25D366' }}
+                                  variant="contained"
+                                  startIcon={<Iconify icon="mdi:whatsapp" />}
+                                >
+                                  Whatsapp
+                                </Button>
+                                <Button
+                                  sx={{ fontSize: '12px', color: 'white', minWidth: '113px', mt: '10px', bgcolor: '#E64848' }}
+                                  variant="contained"
+                                  startIcon={<Iconify icon="mdi:email" />}
+                                >
+                                  Email
+                                </Button>
+                              </AccordionDetails>
+                            </Accordion>
+                          </Box>
                         </TableCell>
 
                         <TableCell align="center">
