@@ -182,10 +182,7 @@ export default function ProjectsPage() {
 
     // Perform submit logic here
     console.log('Form submitted:', {
-      projectName,
-      numOfBuildings,
-      buildingNames,
-      numOfWings,
+
     });
 
     handleModalClose();
