@@ -281,7 +281,7 @@ export default function ProjectsPage() {
                           </Button>
                         </TableCell>
 
-                        <TableCell align="center">{staff}
+                        <TableCell align="center" sx={{ display: 'flex', flexDirection: 'column' }}>{staff}
                           <Button sx={{ fontSize: '12px', color: 'white', minWidth: '113px', mt: '6px', bgcolor: '#E64848' }} variant="contained" startIcon={<Iconify icon="mdi:account-remove" />}>
                             Remove
                           </Button>
