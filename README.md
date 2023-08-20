@@ -1,7 +1,7 @@
 # RERA Desktop Dev Project
 
 Welcome to the README for the **rera-desktop-dev** project. This project aims to provide a comprehensive desktop application frontend for a Real Estate Regulatory Authority (RERA) system. The application allows users to efficiently manage various aspects of their real estate projects, staff members, and personal profile. Below, you'll find an overview of the features and functionalities provided by this application.
-
+The project uses a customized Material-UI theme that is tailored to the specific needs and branding of the RERA application. The theme enhances the visual appeal and user experience of the application.
 ## Features
 
 ### Navigation Menu and React Router
@@ -58,6 +58,7 @@ The application should now be accessible at `http://localhost:3000`.
 - ApexCharts: A versatile charting library for creating interactive and visually appealing charts.
 - React Hook Form: A library for managing form state and validation in React applications.
 - Other relevant technologies (e.g., charting libraries, communication tools) that you might use in the project.
+- Custom Theme: The project uses a customized Material-UI theme that is tailored to the specific needs and branding of the RERA application. The theme enhances the visual appeal and user experience of the application.
 
 ## Contact
 
