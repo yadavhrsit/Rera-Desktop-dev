@@ -64,6 +64,9 @@ The application should now be accessible at `http://localhost:3000`.
 
 If you have any questions or need assistance, please contact [inbox.harshityadav@gmail.com](mailto:inbox.harshityadav@gmail.com).
 
-
+![Dashboard](/screenshots/dashboard.png")
+![Projects](/screenshots/projects.png")
+![Staff Management](/screenshots/staff_management.png")
+![Account Management](/screenshots/account_management.png")
 
 Thank you for choosing the **rera-desktop-dev** project! We hope this application streamlines your real estate management tasks and enhances your overall experience.
